@@ -1,0 +1,6 @@
+Before running extLastUser.sh: 
+	Make sure we have topics' tweets.
+Before spiding information of last hop user:
+	Make sure we have extracted last hop user from topics' tweets, and have enough .sub files, copy the library of user links to atropos/resource directory
+Before spiding tweets of last hop user:
+	Make sure we have spided information of last hop user, have enough .sub files, and set the right spide time window in Spide/utils.py

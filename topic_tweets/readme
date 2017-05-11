@@ -1,0 +1,2 @@
+Input: trending_topics
+Runner: Spider/topicRetweetSpider.py
