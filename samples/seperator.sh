@@ -6,6 +6,6 @@ else
 	cd atropos && git pull && cd -
 fi
 rm -rf atropos/data/* && rm -rf atropos/result/*
-cp -rf ../../last_hop/spide_tweets/data/* atropos/data
+cp -rf ../../topic_tweets/data/* atropos/data
 cd atropos/Preprocessing && python twseperator.py && cd -
 cd ..

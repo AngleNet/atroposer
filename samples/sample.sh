@@ -15,7 +15,6 @@ else
 	cd atropos && git pull && cd -
 fi
 rm -rf atropos/data/* && rm -rf atropos/result/*
-cp -rf $tweets/atropos/result/* atropos/data
-cp -f ../last_hop/spide_users/data/user_links.new atropos/data
 cp -rf ../last_hop/spide_tweets/data/* atropos/data
+cp -rf $tweets/atropos/result/* atropos/data # Including user_links.new
 cd atropos/Preprocessing && python sampleGenerator.py && python sampStat.py && cd -
