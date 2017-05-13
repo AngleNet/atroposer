@@ -13,7 +13,7 @@ fi
 #Copy user links of last hop.
 cp ../spide_users/data/user_links.new .
 #Copy .sub files
-cp ../*.sub .
+cp ../../sub/*.sub .
 input=user_links.new
 num_runner=3
 lines=$(wc -l $input |awk '{print $1}')

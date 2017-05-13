@@ -13,7 +13,7 @@ fi
 #Copy incomplete user links.
 cp ../atropos/result/user_links.new ./user_links
 #Copy .sub files
-cp ../*.sub .
+cp ../../sub/*.sub .
 #Copy user links library to avoid unnessarary spiding.
 cp ../../users/user_links.new atropos/resource/user_links.new
 input=user_links

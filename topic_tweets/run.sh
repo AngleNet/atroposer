@@ -15,7 +15,7 @@ fi
 
 input=trending_topics
 cp ../$input .
-cp ../*.sub .
+cp ../../sub/*.sub .
 num_runner=3
 lines=$(wc -l $input |awk '{print $1}')
 let even=lines/num_runner
