@@ -19,6 +19,7 @@ if [ ! $rem -eq 0 ]; then
 	let even=even+1
 fi
 split -l $even -d tweets.sample tweets.sample
+let num_runner=num_runner-1
 
 for i in $(seq -w 00 $num_runner); do
 	if [ -d $i ]; then
