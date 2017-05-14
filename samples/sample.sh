@@ -17,4 +17,5 @@ fi
 rm -rf atropos/data/* && rm -rf atropos/result/*
 cp -rf ../last_hop/spide_tweets/data/* atropos/data
 cp -rf $tweets/atropos/result/* atropos/data # Including user_links.new
+cp $tweets/atropos/data/trending_topics atropos/data
 cd atropos/Preprocessing && python sampleGenerator.py && python sampStat.py && cd -

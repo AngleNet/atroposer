@@ -6,7 +6,7 @@ cp ../../topics/*.topk_topic .
 cp ../../samples/atropos/result/tweets.sample .
 
 if [ ! -d atropos ]; then
-	git clone git://github.com/anglenet/atropos
+	git clone -b topic-in-tweet  git://github.com/anglenet/atropos
 else
 	cd atropos && git pull && cd -
 fi
