@@ -1,3 +1,4 @@
+running_date=$(head ../date)
 loc=runner
 if [ -d $loc ]; then
     echo -n "$loc exists, remove it (y/n)?"
@@ -14,6 +15,7 @@ else
 fi
 
 input=trending_topics
+cp ../../topics/${running_date}.topk_topic $input
 cp ../$input .
 cp ../../sub/*.sub .
 num_runner=3
