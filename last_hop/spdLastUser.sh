@@ -16,7 +16,7 @@ cp ../atropos/result/user_links.new ./user_links
 #Copy .sub files
 cp ../../sub/*.sub .
 #Copy user links library to avoid unnessarary spiding.
-cp ../../users/user_links.new atropos/resource/user_links.new
+cp ../user_links.new atropos/resource/user_links.new
 input=user_links
 num_runner=3
 lines=$(wc -l $input |awk '{print $1}')
