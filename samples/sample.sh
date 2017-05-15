@@ -1,3 +1,4 @@
+running_date=$(head ../date)
 tweets=topic_tweets
 if [ ! -d $tweets ]; then
 	echo "Run seperator.sh firstly"
@@ -10,7 +11,7 @@ else
 	fi
 fi
 if [ ! -d atropos ]; then
-	git clone -b topic-in-tweet git://github.com/anglenet/atropos
+	git clone -b topic-in-tweet-$running_date git://github.com/anglenet/atropos
 else
 	cd atropos && git pull && cd -
 fi

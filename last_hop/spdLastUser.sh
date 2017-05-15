@@ -1,3 +1,4 @@
+running_date=$(head ../date)
 loc=spide_users
 echo -n "We are going to remove $(pwd)/$loc, are you sure (y/n)? "
 read answer
@@ -6,7 +7,7 @@ if echo "$answer" | grep -iq "^y" ;then
 fi
 mkdir -p $loc && cd $loc
 if [ ! -d atropos ]; then
-	git clone -b topic-in-tweet git://github.com/anglenet/atropos
+	git clone -b topic-in-tweet-$running_date git://github.com/anglenet/atropos
 else
 	cd atropos && git pull && cd - 
 fi
