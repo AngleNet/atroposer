@@ -16,7 +16,6 @@ fi
 
 input=trending_topics
 cp ../../topics/${running_date}.topk_topic $input
-cp ../$input .
 cp ../../sub/*.sub .
 num_runner=3
 lines=$(wc -l $input |awk '{print $1}')
