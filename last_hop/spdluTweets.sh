@@ -16,7 +16,7 @@ cp ../spide_users/data/user_links.new .
 #Copy .sub files
 cp ../../sub/*.sub .
 input=user_links.new
-num_runner=3
+num_runner=4
 lines=$(wc -l $input |awk '{print $1}')
 let even=lines/num_runner
 let rem=lines%num_runner
