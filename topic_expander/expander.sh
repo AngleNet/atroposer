@@ -22,3 +22,4 @@ while read line; do
 	fi
 done < atropos/data/trending_topics
 tar czf data.tar.gz data
+scp data.tar.gz qhcert:/tmp
