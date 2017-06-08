@@ -18,7 +18,7 @@ cp ../../sub/*.sub .
 #Copy user links library to avoid unnessarary spiding.
 cp ../user_links.new atropos/resource/user_links.new
 input=user_links
-num_runner=2
+num_runner=3
 lines=$(wc -l $input |awk '{print $1}')
 let even=lines/num_runner
 let rem=lines%num_runner
