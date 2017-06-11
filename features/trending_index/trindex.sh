@@ -13,7 +13,11 @@ else
 fi
 
 lines=$(wc -l tweets.sample|awk '{print $1}')
-num_runner=10
+if [ "${NUM_RUNNER}x" != "x" ];then
+	num_runner=${NUM_RUNNER}
+else
+	num_runner=10
+fi
 let even=lines/num_runner
 let rem=lines%num_runner
 if [ ! $rem -eq 0 ]; then
