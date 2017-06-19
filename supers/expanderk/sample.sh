@@ -1,24 +1,17 @@
-if [ -d result ]; then
-	echo "'result' directory already exists, remove it fistly"; 
-	exit 0
-else
-	mkdir result
+loc=trindex
+if [ -d $loc ]; then
+	rm -rf $loc
 fi
-proj_dir=$(pwd)/../..
-res_dir=$(pwd)
-trending_index=${proj_dir}/features/trending_index
-training=${proj_dir}/training
-export NUM_RUNNER=24
-for kws in data/topics.kws.*; do
-	_kws=$(basename ${kws})
+proj=$(pwd)/../..
+trindex=$proj/features/trending_index
+cd $trindex && bash clean.sh && cd -
+mkdir -p $loc && cd $loc
+for kws_fn in ../data/topics.kws.*; do 
+	_kws=$(basename $kws_fn)
 	num_kws=${_kws##*.}
-	cd ${trending_inex} && bash clean.sh && cd -
-	cp $kws ${trending_index}/topics.kws
-	cd ${trending_index} && bash trindex.sh
-	let num=NUM_RUNNER-1
-	for i in $(seq -w 00 $num); do
-		cat $i/result/sample >> sample
-	done
-	cd ${training} && bash run.sh
-	cp atropos/result/samples.train ${res_dir}/samples.train.${num_kdw}
+	mkdir -p $num_kws
+	cp -rf $trindex/* $num_kws
+	cp $kws_fn $num_kws/topics.kws
+	cp ../trindex_super.sh $num_kws
+	cd $num_kws && bash trindex_super.sh && cd -
 done
